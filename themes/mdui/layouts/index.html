@@ -1,5 +1,11 @@
 {{ define "main" -}}
 <div>
+  {{ range .Site.Taxonomies }}
+  <p>{{ . }}</p>
+  {{ end }}
+  {{ range .Site.Sections }}
+  <h2>{{ .Title }} ({{ len .Pages }})</h2>
+  {{ end }}
   {{ range first 10 .Site.RegularPages -}}
   {{ if .Section -}}
   <article class="mdui-p-b-2">
