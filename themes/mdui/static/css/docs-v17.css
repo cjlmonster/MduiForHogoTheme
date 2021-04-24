@@ -1,0 +1,73 @@
+/* 文档最外层 */
+.doc-container {
+  padding-top: 10px;
+  padding-bottom: 60px;
+  position: relative;
+}
+@media (min-width: 480px) {
+  .doc-container {
+    padding-top: 10px;
+  }
+}
+@media (min-width: 840px) {
+  .doc-container {
+    padding-top: 10px;
+  }
+}
+
+div.mdui-drawer i, div.mdui-drawer a {
+  text-decoration:none;
+}
+
+div.mdui-drawer i:hover, div.mdui-drawer a:hover {
+  text-decoration: none;
+}
+
+div.break-text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  font-size: 1.15em;
+}
+
+.tag {
+  border-radius: 6px;
+  color: #e8e8e8;
+  padding: 5px 8px;
+  font-size: 0.9em;
+  background-color: brown;
+  margin-right: 8px;
+}
+
+.tag:hover{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.tag-color-0 {
+  background-color:rgb(43, 156, 118)
+}
+
+.tag-color-1 {
+  background-color:rgb(66, 123, 209)
+}
+
+.tag-color-2 {
+  background-color:rgb(145, 206, 33)
+}
+
+.tag-color-3 {
+  background-color:rgb(204, 147, 25)
+}
+
+.tag-color-4 {
+  color:rgb(224, 77, 188)
+}
+
+.topic-tag {
+  font-size: 0.5em;
+  font-weight: normal;
+  
+}

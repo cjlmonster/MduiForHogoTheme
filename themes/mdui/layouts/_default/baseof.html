@@ -1,0 +1,14 @@
+{{- partial "head.html" . -}}
+
+<body
+    class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-teal mdui-theme-accent-deep-orange mdui-theme-layout-light mdui-loaded">
+    {{- partial "header.html" . -}}
+    {{- partial "drawer.html" . -}}
+    <div class="mdui-container doc-container" style="height: auto !important;">
+        {{- block "main" . }}{{- end }}
+    </div>
+    <!-- {{- partial "footer.html" . -}} -->
+    {{- partial "theme-dialog.html" . -}}
+</body>
+
+</html>
