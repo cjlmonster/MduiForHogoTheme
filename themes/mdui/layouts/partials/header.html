@@ -6,14 +6,14 @@
 
     {{ if or .IsNode (not .Section) }}
     {{ if not .IsHome }}
-    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '返回'}">
-      <i onclick="window.history.go(-1)" class="mdui-icon material-icons">arrow_back</i>
+    <span onclick="window.history.go(-1)" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '返回'}">
+      <i class="mdui-icon material-icons">arrow_back</i>
     </span>
     {{ end }}
     <a class="mdui-typo-title" style="text-decoration: none;">{{ .Title }}</a>
     {{ else }}
-    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '返回'}">
-      <i onclick="window.history.go(-1)" class="mdui-icon material-icons">arrow_back</i>
+    <span onclick="window.history.go(-1)" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '返回'}">
+      <i class="mdui-icon material-icons">arrow_back</i>
     </span>
     {{ end }}
 

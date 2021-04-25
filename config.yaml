@@ -7,7 +7,7 @@ theme: "mdui"
 
 themeDir: "./themes"
 
-paginate: 5
+paginate: 5  # 分页
 
 Menus:
   main:

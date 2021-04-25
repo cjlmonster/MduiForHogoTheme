@@ -1,6 +1,6 @@
 <article>
     <h2>
-        <a class="mdui-text-color-theme" href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        <a class="mdui-text-color-theme" href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
         <a href="/{{ lower .Page.Section }}" class="mdui-float-right mdui-text-color-theme-a700 topic-tag">
             {{ title .Page.Section }}
         </a>
