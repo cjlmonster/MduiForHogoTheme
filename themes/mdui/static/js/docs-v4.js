@@ -1,49 +1,33 @@
-$(function() {
+$(function () {
   var $document = $(document);
-
-  // 代码高亮
-  hljs.initHighlightingOnLoad();
-
-  // 页面滚动
-  var scroll = new SmoothScroll('[data-scroll]', {
-    speed: 300,
-    speedAsDuration: true
-  });
-
-  $('.mdui-toolbar-spacer').on('click', function() {
-    scroll.animateScroll(0);
-  });
-
-  // 图片占位符
-  Holder.addTheme("gray", {
-    bg: "#BCBEC0",
-    fg: "rgba(255, 255, 255, 1)",
-    size: 12,
-    fontweight: "normal"
-  });
-
-  // 示例处理
-  $('.viewsource').on('click', function () {
-    var $this = $(this);
-    $this.parents('.doc-example').eq(0).toggleClass('doc-example-showcode');
-  });
-
   /**
    * 设置文档主题
    */
   var DEFAULT_PRIMARY = 'indigo';
   var DEFAULT_ACCENT = 'pink';
   var DEFAULT_LAYOUT = 'auto';
-
+  
   // 设置 cookie
   var setCookie = function (key, value) {
     // cookie 有效期为 1 年
     var date = new Date();
-    date.setTime(date.getTime() + 365*24*3600*1000);
+    date.setTime(date.getTime() + 365 * 24 * 3600 * 1000);
     document.cookie = key + '=' + value + '; expires=' + date.toGMTString() + '; path=/';
   };
 
+  // 获取cookie
+  var getCookie = function (cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+      var c = ca[i].trim();
+      if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
+    }
+    return undefined;
+  }
+
   var setDocsTheme = function (theme) {
+    console.log(theme)
     if (typeof theme.primary === 'undefined') {
       theme.primary = false;
     }
@@ -53,7 +37,7 @@ $(function() {
     if (typeof theme.layout === 'undefined') {
       theme.layout = false;
     }
-
+    console.log(theme)
     var i, len;
     var $body = $('body');
 
@@ -84,7 +68,7 @@ $(function() {
       $('input[name="doc-theme-accent"][value="' + theme.accent + '"]').prop('checked', true);
     }
 
-    // 设置主题色
+    // 设置黑夜模式
     if (theme.layout !== false) {
       for (i = 0, len = classs.length; i < len; i++) {
         if (classs[i].indexOf('mdui-theme-layout-') === 0) {
@@ -96,6 +80,12 @@ $(function() {
       $('input[name="doc-theme-layout"][value="' + theme.layout + '"]').prop('checked', true);
     }
   };
+
+  // setDocsTheme({
+  //   primary: getCookie('docs-theme-primary') || DEFAULT_PRIMARY,
+  //   accent: getCookie('docs-theme-accent') || DEFAULT_ACCENT,
+  //   layout: getCookie('docs-theme-layout') || DEFAULT_LAYOUT
+  // })
 
   // 切换主色
   $document.on('change', 'input[name="doc-theme-primary"]', function () {
@@ -127,20 +117,20 @@ $(function() {
     });
   });
 
-  // 如果抽屉栏当前激活项不在视野中，则滚动抽屉栏，使激活项位于垂直居中
-  (function () {
-    var $drawer = $('#main-drawer');
-    var $activeItem = $drawer.find('.mdui-list-item-active');
+  // // 如果抽屉栏当前激活项不在视野中，则滚动抽屉栏，使激活项位于垂直居中
+  // (function () {
+  //   var $drawer = $('#main-drawer');
+  //   var $activeItem = $drawer.find('.mdui-list-item-active');
 
-    if (!$activeItem.length) {
-      return;
-    }
+  //   if (!$activeItem.length) {
+  //     return;
+  //   }
 
-    var activeItemOffsetTop = $activeItem.offset().top;
-    var drawerHeight = $drawer.innerHeight();
+  //   var activeItemOffsetTop = $activeItem.offset().top;
+  //   var drawerHeight = $drawer.innerHeight();
 
-    if (activeItemOffsetTop - 64 < 0 || activeItemOffsetTop - 64 + 238 > drawerHeight) {
-      $drawer[0].scrollTop = activeItemOffsetTop + $drawer[0].scrollTop - drawerHeight / 2;
-    }
-  })();
-});
+  //   if (activeItemOffsetTop - 64 < 0 || activeItemOffsetTop - 64 + 238 > drawerHeight) {
+  //     $drawer[0].scrollTop = activeItemOffsetTop + $drawer[0].scrollTop - drawerHeight / 2;
+  //   }
+  // })()
+})

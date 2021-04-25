@@ -1,7 +1,8 @@
 ---
-title: "自定义标签"
-date: 2021-04-24T23:37:07+08:00
+title: "标签"
+date: 2021-04-25T12:42:17+08:00
 draft: true
-type: "mytags"
+type: "custom"
+layout: "tags"
 ---
 

@@ -1,0 +1,16 @@
+{{ define "main" -}}
+<!-- <h3 class="mdui-text-color-theme-500">{{ .Title }}</h3> -->
+<div class="mdui-divider mdui-m-t-2"></div>
+<ul class="mdui-list" mdui-collapse="{accordion: true}">
+  {{ range $Page := .Site.Sections }}
+  <a href="/{{ $Page.Section }}" class="mdui-list-item mdui-ripple" style="text-decoration: none;">
+    <div class="mdui-list-item-content">
+      <div class="mdui-list-item-title">{{ $Page.Title }}</div>
+      <div class="mdui-list-item-text">{{ $Page.Date.Format "2006-01-02" }}</div>
+    </div>
+    <span class="mdui-float-right">{{len $Page.Pages}}</span>
+  </a>
+  <li class="mdui-divider"></li>
+  {{ end }}
+<ul>
+{{- end }}

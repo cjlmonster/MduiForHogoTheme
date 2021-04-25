@@ -1,0 +1,7 @@
+{{ define "main" -}}
+<div class="post">
+  <h1>{{ .Title }} {{ .Params.tags}} {{ .Params.categories }}</h1>
+  <p>{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
+  {{ .Content }}
+</div>
+{{- end }}

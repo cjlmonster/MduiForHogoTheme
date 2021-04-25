@@ -1,9 +1,17 @@
 {{ define "main" -}}
-<ul class="posts">
-{{ range $p := .Pages -}}
-  <li>
-    <span><a href="{{ .Permalink }}">{{ $p.Title }} ({{ len $p.Pages }})</a> <time class="pull-right post-list" datetime="{{ $p.Date.Format "2006-01-02T15:04:05Z0700" }}">{{ .Date.Format "Mon, Jan 2, 2006" }}</time></span>
-  </li>
-{{- end }}
-</ul>
+
+<!-- <h3>
+  {{ if eq .Section "tags"}}
+  <a href="/tags">标签</a>/<a href="/tags/{{lower .Title }}">{{ .Title }}</a>
+  {{ else }}
+  <a href="/sections">博客系列</a>/<a href="/{{ lower .Title }}">{{ .Title }}</a>
+  {{ end }}
+</h3> -->
+
+<div>
+  {{ range .Paginator.Pages -}}
+  {{- partial "item-article.html" . -}}
+  {{- end }}
+  {{- partial "pagination.html" . -}}
+</div>
 {{- end }}

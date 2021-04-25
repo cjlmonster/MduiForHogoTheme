@@ -1,21 +1,23 @@
 baseURL: "http://example.org/"
 defaultcontentlanguage: "zh-cn"
 languageCode: "zh-cn"
-title: "Hyouka"
+title: "Cjlmonster"
 
 theme: "mdui"
 
 themeDir: "./themes"
 
+paginate: 5
+
 Menus:
   main:
-    - Name: "首页"
+    - Name: "主页"
       Pre: "home"
       URL: "/"
       Weight: 1
-    - Name: "归档"
+    - Name: "博客系列"
       Pre: "bookmark"
-      URL: "/categories"
+      URL: "/sections"
       Weight: 2
     - Name: "标签"
       Pre: "loyalty"
@@ -28,11 +30,12 @@ Menus:
 
 taxonomies:
   tag: "tags"
-  category: "categories"
+  # category: "categories"
   # topic: "topics"
 
 params:
+  themePrimary: "teal"
+  themeAccent: "deep-orange"
+  themeLayout: "auto" # light, dark And auto
   description: "An Simlpe Blog"
-  themeColor: "theme-base-0d"
-  layoutReverse: false
   disqusShortname: "cjlmonster"

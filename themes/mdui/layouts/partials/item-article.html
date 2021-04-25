@@ -1,0 +1,30 @@
+<article>
+    <h2>
+        <a class="mdui-text-color-theme" href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+        <a href="/{{ lower .Page.Section }}" class="mdui-float-right mdui-text-color-theme-a700 topic-tag">
+            {{ title .Page.Section }}
+        </a>
+    </h2>
+    <p class="mdui-text-color-theme-secondary mdui-m-b-1">
+        <span class="mdui-m-r-1">{{ .Page.Date.Format "2006-01-02" }}</span>
+        <span class="mdui-m-r-1">约 {{ .Page.WordCount }} 字</span>
+        <span>预计阅读 {{ .Page.ReadingTime }} 分钟</span>
+    </p>
+    <div class="mdui-text-color-theme-text mdui-typo-body-2-opacity break-text">{{ .Page.Summary }}</div>
+
+    <div class="mdui-m-t-2">
+        {{ range $index, $tag := .Page.Params.tags }}
+        <a href="/tags/{{ lower $tag }}" class="tag tag-color-{{ mod $index 5 }}">
+            <i class="mdui-icon material-icons" style="margin-right: 3px; font-size: 1em;">loyalty</i>
+            {{ $tag }}
+        </a>
+        {{ end }}
+    </div>
+
+    {{ if .Page.Truncated }}
+    <div class="mdui-m-t-2" style="font-weight: bold;">
+        <a class="mdui-text-color-theme-accent" href="{{ .Page.RelPermalink }}">阅读更多</a>
+    </div>
+    {{ end }}
+    <div class="mdui-divider mdui-m-t-2"></div>
+</article>
