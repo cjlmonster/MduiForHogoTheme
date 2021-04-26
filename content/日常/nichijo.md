@@ -1,7 +1,7 @@
 ---
 title: "Nichijo"
 date: 2021-04-24T15:10:10+08:00
-draft: true
+draft: false
 tags: 
   - "日常"
 categories:

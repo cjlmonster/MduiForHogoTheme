@@ -1,14 +1,13 @@
 ---
 title: "Hyde主题使用教程"
 date: 2021-04-23T22:57:48+08:00
-draft: true
+draft: false
 tags: 
   - "Hyde"
   - "主题"
 categories: 
   - "新闻"
 ---
-# Hyde
 
 Hyde is a brazen two-column [hugo](https://gohugo.io) theme based on the [Jekyll](http://jekyllrb.com) theme of the same name.
 It pairs a prominent sidebar with uncomplicated content.
@@ -18,7 +17,10 @@ It pairs a prominent sidebar with uncomplicated content.
 
 ## Contents
 
+- [Contents](#contents)
 - [Installation](#installation)
+  - [Quick Start](#quick-start)
+  - [Standard Installation](#standard-installation)
 - [Options](#options)
   - [Sidebar menu](#sidebar-menu)
   - [Sidebar description](#sidebar-description)
@@ -26,9 +28,9 @@ It pairs a prominent sidebar with uncomplicated content.
   - [Themes](#themes)
   - [Reverse layout](#reverse-layout)
   - [Disqus](#disqus)
-  - [Google Analytics](#google-analytics)
+- [Google Analytics](#google-analytics)
 - [Author](#author)
-- [Ported by](#ported-by)
+- [Ported By](#ported-by)
 - [License](#license)
 
 

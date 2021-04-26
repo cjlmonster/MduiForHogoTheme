@@ -3,7 +3,10 @@
 <div class="mdui-divider mdui-m-t-2"></div>
 <div class="mdui-m-t-4">
     {{ range $index, $tag := .Pages }}
-    <a href="{{ $tag.RelPermalink }}" class="tag2 tag-color-{{ mod $index 5 }}">{{ $tag.Title }} ({{ len $tag.Pages }})</a>
+    <a href="{{ $tag.RelPermalink }}" class="tag2 tag-color-{{ mod $index 5 }}">
+        {{ $tag.Title }} 
+        <span>({{ len $tag.Pages }})</span>
+    </a>
     {{end}} 
 </div>
 {{end}}

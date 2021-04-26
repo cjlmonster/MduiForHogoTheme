@@ -12,7 +12,8 @@
 @media (min-width: 840px) {
   .doc-container {
     padding-top: 10px;
-    width: 80%;
+    width: 65%;
+    /* margin-left: 130px; */
   }
 }
 
@@ -39,22 +40,29 @@ div.break-text {
   font-size: 0.9em;
   background-color: brown;
   margin-right: 8px;
+  transition: border-radius .3s, color .3s;
 }
 
 .tag2 {
   display: inline-block;
   border-radius: 6px;
-  color: #e8e8e8;
+  color: #f5e9e9;
   padding: 6px 8px;
-  font-size: 0.95em;
+  font-size: 0.75rem;
   background-color: brown;
   margin: 8px;
+  transition: border-radius .3s, color .3s;
 }
 
-.tag:hover, .tag2:hover{
+.tag span, .tag2 span {
+  font-size: 0.65rem;
+}
+
+.tag:hover, .tag2:hover, .tag:active, .tag2:active{
   text-decoration: none;
-  color: white;
+  color: #f7efef;
   cursor: pointer;
+  border-radius: 0;
 }
 
 .tag-color-0 {
@@ -66,7 +74,7 @@ div.break-text {
 }
 
 .tag-color-2 {
-  background-color:rgb(145, 206, 33)
+  background-color:rgb(81, 209, 87)
 }
 
 .tag-color-3 {
@@ -78,8 +86,8 @@ div.break-text {
 }
 
 .topic-tag {
-  font-size: 0.5em;
-  font-weight: normal;
+  font-size: 0.7rem;
+  font-weight: bold;
   
 }
 
@@ -119,3 +127,10 @@ div.break-text {
   /* border-color: #007bff; */
 }
 
+div.direct {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 0 0 0;
+  font-size: 1.2em;
+}

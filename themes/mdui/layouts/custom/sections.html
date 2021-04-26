@@ -3,13 +3,14 @@
 <div class="mdui-divider mdui-m-t-2"></div>
 <ul class="mdui-list" mdui-collapse="{accordion: true}">
   {{ range $Page := .Site.Sections }}
-  <a href="/{{ $Page.Section }}" class="mdui-list-item mdui-ripple" style="text-decoration: none;">
+  <li onclick="location.href = '/{{ $Page.Section }}'" class="mdui-list-item mdui-ripple">
+    <div class="mdui-list-item-avatar"><img src="/img/{{ $Page.Params.Logo }}"/></div>
     <div class="mdui-list-item-content">
       <div class="mdui-list-item-title">{{ $Page.Title }}</div>
       <div class="mdui-list-item-text">{{ $Page.Date.Format "2006-01-02" }}</div>
     </div>
     <span class="mdui-float-right">{{len $Page.Pages}}</span>
-  </a>
+  </li>
   <li class="mdui-divider"></li>
   {{ end }}
 <ul>

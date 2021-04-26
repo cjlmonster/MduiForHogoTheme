@@ -1,5 +1,13 @@
 {{ define "main" -}}
 <div>
+  <!-- <ul class="mdui-list">
+  {{ range $sec := where .Pages "Section" "ne" ""}}
+    <li class="mdui-subheader">{{ $sec.Title }}</li>
+    {{ range $page := $sec.Pages }}
+    <li class="mdui-list-item mdui-ripple">{{ $page.Title }}</li>
+    {{ end }}
+  {{ end }}
+</ul> -->
   <!-- {{ $paginator := .Paginate (where .Site.RegularPages "Section" "!=" "") }} -->
   {{ range (.Paginate .RegularPagesRecursive).Pages -}}
   {{- partial "item-article.html" . -}}
