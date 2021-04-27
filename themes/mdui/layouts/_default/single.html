@@ -14,13 +14,20 @@
 
   <script>
     $(function() {
-      $('div#blog table').each(function(index, element) {
-        let table = $(element).clone()
-        table.addClass('mdui-table').addClass('mdui-table-hoverable')
+      // $('div#blog table').each(function(index, element) {
+      //   let table = $(element).clone()
+      //   table.addClass('mdui-table').addClass('mdui-table-hoverable')
+      //   let div = document.createElement('div')
+      //   $(div).addClass('mdui-table-fluid').addClass('mdui-m-b-3').append(table)
+      //   let node = $(element).replaceWith(div)
+      //   console.log(node[0])
+      // })
+      $('div#blog table').each(function(index, table) {
+        $(table).addClass('mdui-table').addClass('mdui-table-hoverable')
         let div = document.createElement('div')
-        $(div).addClass('mdui-table-fluid').addClass('mdui-m-b-3').append(table)
-        let node = $(element).replaceWith(div)
-        console.log(node[0])
+        $(div).addClass('mdui-table-fluid').addClass('mdui-m-b-3')
+        $(div).insertBefore(table).append(table)
+        console.log(div)
       })
     })
   </script>
@@ -34,21 +41,41 @@
     {{ end }}
   </div>
 
-  <div class="direct">
+  <div class="direct mdui-hidden-sm-down">
     {{ with .PrevInSection }}
     <a href="{{ .RelPermalink }}" class="mdui-text-color-theme-text">
       <i class="mdui-icon material-icons">chevron_left</i>
-      <span class="mdui-hidden-sm-down">{{ .Title }}</span>
-      <span class="mdui-hidden-md-up">上一篇</span>
+      <span>上一篇 - {{ .Title }}</span>
+      
     </a>
     {{ else }}
     <span></span>
     {{ end }}
     {{ with .NextInSection }}
     <a href="{{ .RelPermalink }}" class="mdui-text-color-theme-text">
-      <span class="mdui-hidden-md-up">下一篇</span>
-      <span class="mdui-hidden-sm-down">{{ .Title }}</span>
+      <span>{{ .Title }} - 下一篇</span>
       <i class="mdui-icon material-icons">chevron_right</i>
+    </a>
+    {{ else }}
+    <span></span>
+    {{ end }}
+  </div>
+
+  <div class="direct2 mdui-hidden-md-up">
+    {{ with .PrevInSection }}
+    <a href="{{ .RelPermalink }}" class="mdui-text-color-theme-text">
+      <i class="mdui-icon material-icons">chevron_left</i>
+      <span>上一篇 - {{ .Title }}</span>
+      
+    </a>
+    {{ else }}
+    <span></span>
+    {{ end }}
+    {{ with .NextInSection }}
+    <a href="{{ .RelPermalink }}" class="mdui-text-color-theme-text">
+      <i class="mdui-icon material-icons">chevron_left</i>
+      <span>下一篇 - {{ .Title }}</span>
+      <span></span>
     </a>
     {{ else }}
     <span></span>

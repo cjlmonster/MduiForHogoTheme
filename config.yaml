@@ -17,12 +17,12 @@ Menus:
       Pre: "home"
       URL: "/"
       Weight: 1
-    - Name: "博客系列"
-      Pre: "bookmark"
+    - Name: "博客专栏"
+      Pre: "local_library"
       URL: "/sections"
       Weight: 2
     - Name: "标签"
-      Pre: "loyalty"
+      Pre: "local_offer"
       URL: "/tags"
       Weight: 3
     - Name: "关于我"

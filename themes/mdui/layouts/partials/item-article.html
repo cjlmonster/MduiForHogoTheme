@@ -15,7 +15,7 @@
     <div class="mdui-m-t-2">
         {{ range $index, $tag := .Page.Params.tags }}
         <a href="/tags/{{ lower $tag }}" class="tag tag-color-{{ mod $index 5 }}">
-            <i class="mdui-icon material-icons" style="margin-right: 3px; font-size: 1em;">loyalty</i>
+            <i class="mdui-icon material-icons" style="margin-right: 3px; font-size: 1em;">local_offer</i>
             {{ $tag }}
         </a>
         {{ end }}

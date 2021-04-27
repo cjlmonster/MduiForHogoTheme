@@ -1,10 +1,56 @@
-<div class="mdui-drawer" id="main-drawer">
-	<div class="mdui-list" style="margin-bottom: 76px;">
+<div class="mdui-drawer mdui-shadow-10" id="main-drawer" style="display: flex;flex-direction: column; justify-content: space-between;">
+	<div class="mdui-list">
+		<!-- {{ $accent := slice 400 500 600 700 800 900 }}
+		{{ $i := 0 }} -->
 		{{ range $menu := .Site.Menus.main }}
 		<a href="{{ $menu.URL }}" class="mdui-list-item mdui-ripple">
 			<i class="mdui-list-item-icon mdui-icon material-icons">{{ $menu.Pre }}</i>
-			<div class="mdui-list-item-content">{{ $menu.Name }}</div>
+			<div class="mdui-list-item-content" style="font-weight: 500;">{{ $menu.Name }}</div>
+			<i class="mdui-collapse-item-arrow mdui-icon material-icons">chevron_right</i>
 		</a>
+		<!-- {{ $i = add $i 1 }} -->
 		{{ end }}
+	</div>
+	<div class="top-container">
+		<h4 class="mdui-text-color-theme-a400 mdui-text-center">标签云</h4>
+		<div class="mdui-divider" style="margin: 0 10px;"></div>
+		<div class="tab-box">
+				{{ $base := .Site.BaseURL }}
+				{{ $i := 0 }}
+				{{ range $key, $value := .Site.Taxonomies.tags }}
+				<a href="{{ $base }}tags/{{ $key }}" class="ytab ytag-color-{{ mod $i 5 }}">
+					{{ $key }} 
+					<span>({{ len $value }})</span>
+				</a>
+				{{ $i = add $i 1 }}
+				{{ end }}
+
+				<!-- {{ $i = 0 }}
+				{{ range $key, $value := .Site.Taxonomies.tags }}
+				<a href="{{ $base }}tags/{{ $key }}" class="ytab ytag-color-{{ mod $i 5 }}">
+					{{ $key }} 
+					<span>({{ len $value }})</span>
+				</a>
+				{{ $i = add $i 1 }}
+				{{ end }}
+
+				{{ $i = 0 }}
+				{{ range $key, $value := .Site.Taxonomies.tags }}
+				<a href="{{ $base }}tags/{{ $key }}" class="ytab ytag-color-{{ mod $i 5 }}">
+					{{ $key }} 
+					<span>({{ len $value }})</span>
+				</a>
+				{{ $i = add $i 1 }}
+				{{ end }}
+
+				{{ $i = 0 }}
+				{{ range $key, $value := .Site.Taxonomies.tags }}
+				<a href="{{ $base }}tags/{{ $key }}" class="ytab ytag-color-{{ mod $i 5 }}">
+					{{ $key }} 
+					<span>({{ len $value }})</span>
+				</a>
+				{{ $i = add $i 1 }}
+				{{ end }} -->
+		</div>
 	</div>
 </div>
