@@ -1,10 +1,14 @@
 <header class="mdui-appbar mdui-appbar-fixed">
   <div class="mdui-toolbar mdui-color-theme">
-    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
-      mdui-drawer="{target: &#39;#main-drawer&#39;, swipe: true}"><i class="mdui-icon material-icons">menu</i></span>
-    <a href="/" class="mdui-typo-headline mdui-hidden-xs" style="text-decoration: none;font-weight: 400;font-style: italic;">{{ .Site.Title }}</a>
 
-    {{ if or .IsNode (not .Section) }}
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
+      mdui-drawer="{target: '#main-drawer', swipe: true}">
+      <i class="mdui-icon material-icons">menu</i>
+    </span>
+    <a href="/" class="mdui-typo-headline" style="text-decoration: none;font-weight: 400;font-style: italic;">{{
+      .Site.Title }}</a>
+
+    <!-- {{ if or .IsNode (not .Section) }}
     {{ if not .IsHome }}
     <span onclick="window.history.go(-1)" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '返回'}">
       <i class="mdui-icon material-icons">arrow_back</i>
@@ -15,14 +19,74 @@
     <span onclick="window.history.go(-1)" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '返回'}">
       <i class="mdui-icon material-icons">arrow_back</i>
     </span>
-    {{ end }}
+    {{ end }} -->
 
+    <div class="mdui-hidden-xs-down" style="display: flex;justify-content: center;align-items: center;">
+      {{ range $menu := .Site.Menus.main }}
+      <div onclick="location.href='{{ $menu.URL }}'" class="mdui-list-item mdui-ripple">
+        {{ $menu.Name }}
+      </div>
+      {{ end }}
+    </div>
 
     <div class="mdui-toolbar-spacer"></div>
 
+    <!-- <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '搜索'}">
+      <i class="mdui-icon material-icons">search</i>
+    </span> -->
+    <style>
+      .mdui-textfield-expandable.mdui-textfield-expanded {
+        width: auto;
+        flex-grow: 1;
+      }
+      div.flx {
+        position: absolute;
+        background-color: inherit;
+        top: 0;
+        left: -16px;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        visibility:hidden;
+      }
+    </style>
+    
+    <div class="mdui-textfield mdui-textfield-expandable mdui-float-right mdui-hidden-sm-down">
+      <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
+      <input class="mdui-textfield-input" type="text" placeholder="Search" />
+      <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+    </div>
+    <button id='showSearch' class="mdui-btn mdui-btn-icon mdui-hidden-md-up"><i class="mdui-icon material-icons">search</i></button>
 
-    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"
-      mdui-dialog="{target: &#39;#dialog-docs-theme&#39;}" mdui-tooltip="{content: &#39;设置主题&#39;}"><i
-        class="mdui-icon material-icons">color_lens</i></span>
+    <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}"
+      mdui-tooltip="{content: '设置主题'}">
+      <i class="mdui-icon material-icons">color_lens</i>
+    </span>
+
+    <div class="flx">
+      <div class="mdui-textfield mdui-textfield-expandable mdui-textfield-expanded">
+        <button id='backpress' class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">arrow_back</i></button>
+        <input class="mdui-textfield-input" type="text" placeholder="Search"/>
+        <button id='clearTxt' class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
+      </div>
+    </div>
   </div>
 </header>
+
+<script>
+  $(function() {
+    $('#showSearch').on('click', function(e) {
+      $('div.flx').css('visibility', 'visible')
+      return false
+    })
+    $('#backpress').on('click', function(e) {
+      $(e.target).parents('div.flx').css('visibility', 'hidden')
+      return false
+    })
+    $('#clearTxt').on('click', function(e) {
+      $(e.target).parent().prev().val('')
+      return false
+    })
+  })
+</script>
