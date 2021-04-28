@@ -1,7 +1,7 @@
 baseURL: "https://cjlmonster.github.io/"
 defaultcontentlanguage: "zh-cn"
 languageCode: "zh-cn"
-title: "Cjlmonster"
+title: "Hyou"
 
 theme: "mdui"
 
@@ -40,3 +40,8 @@ params:
   themeAccent: "deep-orange"
   themeLayout: "auto" # light, dark And auto
   description: "An Simlpe Blog"
+  # 个人信息
+  niconame: "Rei"
+  email: "cjlmonster@163.com"
+  signature: "白开水与方便面"
+  headUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201909%2F27%2F20190927153637_jtitf.thumb.700_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1622186371&t=688a32974f766c36aac39793b994b0fb"

@@ -37,6 +37,12 @@ div.break-text {
   font-size: 0.9rem;
 }
 
+div.mydrawer {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+}
+
 .tag {
   border-radius: 6px;
   color: #e8e8e8;
@@ -161,7 +167,7 @@ div.top-container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start; 
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 div.tab-box {
@@ -207,5 +213,20 @@ div.tab-box {
 .ytag-color-4 {
   border-color:rgb(35, 176, 219);
   color: rgb(35, 176, 219);
+}
+
+.avater {
+  margin: 1.5rem auto 1.25rem;
+  width: 6rem;height: 6rem;
+  border-radius: 3rem;
+  padding: 1px;
+}
+
+.p1 {
+  margin: 0.25rem 0.25rem;
+}
+
+.p2 {
+  margin: 0.25rem 0.25rem 0.85rem;
 }
 

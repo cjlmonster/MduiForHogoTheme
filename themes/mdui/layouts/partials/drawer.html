@@ -1,5 +1,15 @@
-<div class="mdui-drawer mdui-shadow-10" id="main-drawer" style="display: flex;flex-direction: column; justify-content: space-between;">
-	<div class="mdui-list">
+<div class="mdui-drawer mdui-shadow-10 mydrawer" id="main-drawer">
+	
+	<div>
+		<img src="{{ .Site.Params.HeadUrl }}" class="mdui-color-theme-a100 avater" alt="">
+		<p class="mdui-text-center mdui-text-color-theme-text p1">... {{ .Site.Params.Niconame }} ...</p>
+		<p class="mdui-text-center mdui-text-color-theme-text p1">... {{ .Site.Params.Email }} ...</p>
+		<p class="mdui-text-center mdui-text-color-theme-text p2">... {{ .Site.Params.Signature }} ...</p>
+		<div class="mdui-divider" style="margin: 10px 10px;"></div>
+	</div>
+
+	<!-- 菜单列表 -->
+	<div class="mdui-list mdui-hidden-sm-up">
 		<!-- {{ $accent := slice 400 500 600 700 800 900 }}
 		{{ $i := 0 }} -->
 		{{ range $menu := .Site.Menus.main }}
@@ -11,9 +21,10 @@
 		<!-- {{ $i = add $i 1 }} -->
 		{{ end }}
 	</div>
+	<!-- 标签云 -->
 	<div class="top-container">
 		<h4 class="mdui-text-color-theme-a400 mdui-text-center">标签云</h4>
-		<div class="mdui-divider" style="margin: 0 10px;"></div>
+		<div class="mdui-divider" style="margin: 8px 10px 0"></div>
 		<div class="tab-box">
 				{{ $base := .Site.BaseURL }}
 				{{ $i := 0 }}
