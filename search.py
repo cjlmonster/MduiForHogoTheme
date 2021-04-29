@@ -1,7 +1,4 @@
-import sys
 import os
-import getopt
-import re
 import re
 import json
 
