@@ -31,45 +31,7 @@
 
     <div class="mdui-toolbar-spacer"></div>
 
-    <!-- <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-tooltip="{content: '搜索'}">
-      <i class="mdui-icon material-icons">search</i>
-    </span> -->
-    <style>
-      .mdui-textfield-expandable.mdui-textfield-expanded {
-        width: auto;
-        flex-grow: 1;
-      }
-      div.flx {
-        z-index: 100;
-        position: absolute;
-        background-color: inherit;
-        top: 0;
-        /* left: -16px; */
-        left: 100%;
-        right: -8px;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        /* visibility:hidden; */
-        transition: left .2s ease-in-out;
-      }
-    </style>
-    
-    <div class="mdui-textfield mdui-textfield-expandable mdui-float-right mdui-hidden-sm-down">
-      <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
-      <input class="search-input mdui-textfield-input" type="text" placeholder="Search" />
-      <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">close</i></button>
-    </div>
-    <div class="flx">
-      <div class="mdui-textfield mdui-textfield-expandable mdui-textfield-expanded">
-        <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></button>
-        <input class="search-input mdui-textfield-input" type="text" placeholder="Search"/>
-        <button id='backpress' class="mdui-textfield-close mdui-btn mdui-btn-icon">
-          <i class="mdui-icon material-icons">close</i></button>
-      </div>
-    </div>
-    <button id='showSearch' class="mdui-btn mdui-btn-icon mdui-hidden-md-up">
-      <i class="mdui-icon material-icons">search</i></button>
+    {{- partial "search.html" . -}}
 
     <span class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white" mdui-dialog="{target: '#dialog-docs-theme'}"
       mdui-tooltip="{content: '设置主题'}">
@@ -78,24 +40,3 @@
     
   </div>
 </header>
-
-<script>
-  $(function() {
-    $('#showSearch').on('click', function(e) {
-      $('div.flx').css('left', '-16px')
-      return false
-    })
-    $('#backpress').on('click', function(e) {
-      $(e.target).parents('div.flx').css('left', '100%')
-      return false
-    })
-    $('input.search-input').on('keydown', function(e) {
-      if(e.keyCode != 13) return true
-      console.log($(e.target).val())
-    })
-    // $('#clearTxt').on('click', function(e) {
-    //   $(e.target).parent().prev().val('')
-    //   return false
-    // })
-  })
-</script>

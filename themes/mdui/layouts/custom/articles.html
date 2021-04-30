@@ -1,0 +1,64 @@
+{{ define "main" }}
+<div id="app1">
+    <div class="mdui-textfield mdui-textfield-expandable">
+        <button class="mdui-textfield-icon mdui-btn mdui-btn-icon"><i
+                class="mdui-icon material-icons">search</i></button>
+        <input v-model="message" class="mdui-textfield-input" type="text" placeholder="Search" />
+        <button class="mdui-textfield-close mdui-btn mdui-btn-icon"><i
+                class="mdui-icon material-icons">close</i></button>
+    </div>
+    <div class="mdui-list">
+        <div v-for="item in filterList" class="mdui-list-item">
+            ${item.title}
+        </div>
+    </div>
+</div>
+
+<script>
+    var vm = new Vue({
+        delimiters: ['${', '}'],
+        el: '#app1',
+        data: {
+            message: '',
+            articles: []
+        },
+        computed: {
+            filterList: function () {
+                let that = this
+                if(that.message === '') {
+                    return []
+                } else {
+                    return that.articles.filter(function(value, index, array) {
+                        return value.title.indexOf(that.message) != -1 
+                        || value.tags.toString().indexOf(that.message) != -1
+                    })
+                }
+            }
+        },
+        created: function () {
+            this.getArticles()
+        },
+        methods: {
+            getArticles: function () {
+                this.title = 'Hello World'
+                let that = this
+                $.ajax({
+                    url: '/index.json',
+                    methon: 'get',
+                    dataType: 'json',
+                    success: function (data, textStatus, xhr) {
+                        that.articles = data
+                        that.combinds = that.articles
+                    },
+                    error: function (xhr, textStatus) {
+                        console.log('error')
+                    },
+                    complete: function (xhr, textStatus) {
+                        console.log('complete')
+                    }
+                })
+            }
+        }
+    })
+</script>
+{{ end }}

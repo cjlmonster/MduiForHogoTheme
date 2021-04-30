@@ -64,13 +64,19 @@
         "title": "Hyde主题使用教程",
         "date": "2021-04-23T22:57:48+08:00",
         "draft": false,
-        "tags": []
+        "tags": [
+            "Hyde",
+            " 主题"
+        ]
     },
     {
         "uri": "/日常/nichijo",
         "title": "Nichijo",
         "date": "2021-04-24T15:10:10+08:00",
         "draft": false,
-        "tags": []
+        "tags": [
+            "日常",
+            " 新闻"
+        ]
     }
 ]

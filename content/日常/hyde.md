@@ -2,11 +2,7 @@
 title: "Hyde主题使用教程"
 date: 2021-04-23T22:57:48+08:00
 draft: false
-tags: 
-  - "Hyde"
-  - "主题"
-categories: 
-  - "新闻"
+tags: ["Hyde", "主题"]
 ---
 
 Hyde is a brazen two-column [hugo](https://gohugo.io) theme based on the [Jekyll](http://jekyllrb.com) theme of the same name.
