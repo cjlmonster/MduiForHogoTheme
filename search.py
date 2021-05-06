@@ -1,4 +1,6 @@
 import os
+import sys
+from getopt import getopt
 import re
 import json
 
@@ -6,7 +8,8 @@ __content__ = os.path.join(os.path.abspath('.'), 'content')
 
 __static__ = os.path.join(os.path.abspath('.'), 'themes', 'mdui', 'static')
 
-if __name__ == "__main__":
+
+def search(buildDraft=False):
     articles = []
     for f1 in os.listdir(__content__):
         section = os.path.join(__content__, f1)
@@ -26,11 +29,26 @@ if __name__ == "__main__":
                             if key == 'title':
                                 value = re.sub(r"[\"]", '', value)
                             elif key == 'draft':
-                                value = True if value == 'True' else False
+                                value = True if value == 'true' else False
                             elif key == 'tags':
                                 value = [] if value == '' else re.sub(r"[\[\]\"]", '', value).split(',')
                             x[key] = value
-                        articles.append(x)
+                        if buildDraft:
+                            articles.append(x)
+                        elif not x['draft']:
+                            articles.append(x)
     json_file = os.path.join(__static__, 'index.json')
     with open(json_file, 'w', encoding='utf-8') as f:
         json.dump(articles, f, ensure_ascii=False, indent=4)
+
+
+if __name__ == "__main__":
+    buildDraft = False
+    try:
+        args = sys.argv[1:]
+        opts, args = getopt(args, 'D')
+        buildDraft = opts[0][0] == '-D'
+    except Exception as e:
+        print(e)
+        buildDraft = False
+    search(buildDraft)
