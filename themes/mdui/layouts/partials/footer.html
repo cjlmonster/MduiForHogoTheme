@@ -1,17 +1,8 @@
 <!-- footer -->
-<div class="doc-footer-nav mdui-color-theme">
-	<div class="mdui-container">
-		<div class="mdui-row">
-			<div class="mdui-col-xs-2 mdui-col-sm-6 doc-footer-nav-left"></div>
-
-			<a href="https://www.mdui.org/docs/download"
-				class="mdui-ripple mdui-color-theme mdui-col-xs-10 mdui-col-sm-6 doc-footer-nav-right">
-				<div class="doc-footer-nav-text">
-					<i class="mdui-icon material-icons">arrow_forward</i>
-					<span class="doc-footer-nav-direction">Next</span>
-					<div class="doc-footer-nav-chapter">获取 MDUI</div>
-				</div>
-			</a>
-		</div>
+<div class="mdui-container mdui-m-y-1">
+	<div class="mdui-text-center mdui-text-color-theme-secondary">
+		<i class="mdui-icon material-icons" style="font-size: .9rem;">copyright</i>
+		<span style="font-size: .8rem;">2019 - {{ now.Format "2006" }} cjlmonster | <a href="/">{{ .Site.Title }}</a> | <a
+				href="/about">{{ .Site.Params.Niconame }}</a></span>
 	</div>
 </div>

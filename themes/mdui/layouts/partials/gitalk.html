@@ -1,0 +1,20 @@
+<link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+    var gitalk = new Gitalk({
+        clientID: '24ea1fb032d20cc00351', // GitHub Application Client ID
+        clientSecret: '42ab03ec4a326347a4f5448f5bef7d9651599652', // GitHub Application Client Secret
+        repo: 'cjlmonster.github.io',      // 存放评论的仓库
+        owner: 'cjlmonster',          // 仓库的创建者，
+        admin: ['cjlmonster'],        // 如果仓库有多个人可以操作，那么在这里以数组形式写出
+        id: location.pathname,      // 页面的唯一标识。长度必须小于50。此参数用于评论和页面对应的标识，如果想让两个页面用一个评论，可设置两个页面的id一样。默认值：location.href(页面URL)
+        title: document.title, // GitHub issue 的标题，默认值：document.title(HTML中title标签中的值)
+        // proxy: 'http://47.92.85.4:81/login/oauth/access_token'
+        // proxy: 'http://www.cjlmonster.cn/login/oauth/access_token'
+    })
+
+    gitalk.render('gitalk-container');
+</script>
