@@ -7,7 +7,7 @@
        mdui-theme-layout-{{ .Site.Params.ThemeLayout }}">
     {{- partial "header.html" . -}}
     {{- partial "drawer.html" . -}}
-    <div class="mdui-container doc-container" style="height: auto !important;">
+    <div class="mdui-container doc-container">
         {{- block "main" . }}{{- end }}
     </div>
     {{- partial "footer.html" . -}}
