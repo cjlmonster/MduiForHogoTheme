@@ -1,4 +1,5 @@
-baseURL: "https://cjlmonster.github.io/"
+# baseURL: "https://cjlmonster.github.io/"
+baseURL: "http://www.cjlmonster.cn/"
 defaultcontentlanguage: "zh-cn"
 languageCode: "zh-cn"
 title: "Hyou"
