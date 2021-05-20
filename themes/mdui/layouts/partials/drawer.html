@@ -1,5 +1,5 @@
 <div class="mdui-drawer mdui-shadow-10 mydrawer" id="main-drawer">
-	
+
 	<div>
 		<img src="{{ .Site.Params.HeadUrl }}" class="mdui-color-theme-a100 avater" alt="">
 		<p class="mdui-text-center mdui-text-color-theme-text p1">... {{ .Site.Params.Niconame }} ...</p>
@@ -26,17 +26,17 @@
 		<h4 class="mdui-text-color-theme-a400 mdui-text-center">标签云</h4>
 		<div class="mdui-divider" style="margin: 8px 10px 0"></div>
 		<div class="tab-box">
-				{{ $base := .Site.BaseURL }}
-				{{ $i := 0 }}
-				{{ range $key, $value := .Site.Taxonomies.tags }}
-				<a href="{{ $base }}tags/{{ $key }}" class="ytab ytag-color-{{ mod $i 5 }}">
-					{{ $key }} 
-					<span>({{ len $value }})</span>
-				</a>
-				{{ $i = add $i 1 }}
-				{{ end }}
+			{{ $base := .Site.BaseURL }}
+			{{ $i := 0 }}
+			{{ range $key, $value := .Site.Taxonomies.tags }}
+			<a href="{{ $base }}tags/{{ $key }}" class="ytab ytag-color-{{ mod $i 5 }}">
+				{{ $key }}
+				<span>({{ len $value }})</span>
+			</a>
+			{{ $i = add $i 1 }}
+			{{ end }}
 
-				<!-- {{ $i = 0 }}
+			<!-- {{ $i = 0 }}
 				{{ range $key, $value := .Site.Taxonomies.tags }}
 				<a href="{{ $base }}tags/{{ $key }}" class="ytab ytag-color-{{ mod $i 5 }}">
 					{{ $key }} 
