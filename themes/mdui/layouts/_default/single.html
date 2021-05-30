@@ -32,7 +32,7 @@
     })
   </script>
 
-  <div class="mdui-m-t-2">
+  <div class="mdui-m-t-2" style="font-size: 0;">
     {{ range $index, $tag := .Page.Params.tags }}
     <a href="/tags/{{ lower $tag }}" class="tag tag-color-{{ mod $index 5 }}">
       <i class="mdui-icon material-icons" style="margin-right: 3px; font-size: 1em;">loyalty</i>
