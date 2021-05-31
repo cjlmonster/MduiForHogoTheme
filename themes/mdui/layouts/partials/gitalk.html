@@ -13,7 +13,7 @@
         id: location.pathname,      // 页面的唯一标识。长度必须小于50。此参数用于评论和页面对应的标识，如果想让两个页面用一个评论，可设置两个页面的id一样。默认值：location.href(页面URL)
         title: document.title, // GitHub issue 的标题，默认值：document.title(HTML中title标签中的值)
         // proxy: 'http://47.92.85.4:81/login/oauth/access_token'
-        // proxy: 'http://www.cjlmonster.cn/login/oauth/access_token'
+        proxy: 'https://www.cjlmonster.cn/login/oauth/access_token'
     })
 
     gitalk.render('gitalk-container')

@@ -74,6 +74,12 @@ $(function () {
         if (classs[i].indexOf('mdui-theme-layout-') === 0) {
           $body.removeClass(classs[i]);
         }
+        if (classs[i].indexOf('bq-') === 0) {
+          $body.removeClass(classs[i]);
+        }
+      }
+      if(theme.layout !== 'auto') {
+        $body.addClass('bq-' + theme.layout);
       }
       $body.addClass('mdui-theme-layout-' + theme.layout);
       setCookie('docs-theme-layout', theme.layout);

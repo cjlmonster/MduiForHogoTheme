@@ -10,6 +10,32 @@
         ]
     },
     {
+        "uri": "/android/keytool",
+        "title": "keytool命令使用说明",
+        "date": "2021-05-29T17:20:02+08:00",
+        "draft": false,
+        "tags": [
+            "java",
+            " keytool",
+            " openssl",
+            " ssl",
+            " https"
+        ]
+    },
+    {
+        "uri": "/android/netconfig",
+        "title": "Android 网络安全配置",
+        "date": "2021-05-31T15:57:03+08:00",
+        "draft": false,
+        "tags": [
+            "network",
+            " ssl",
+            " https",
+            " android",
+            " ca"
+        ]
+    },
+    {
         "uri": "/android/okhttp",
         "title": "Okhttp",
         "date": "2021-04-25T09:51:47+08:00",
