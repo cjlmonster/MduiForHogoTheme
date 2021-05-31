@@ -44,12 +44,14 @@ div.mydrawer {
 }
 
 .tag {
+  display: inline-block;
   border-radius: 6px;
   color: #e8e8e8;
   padding: 5px 8px;
   font-size: 0.9rem;
   background-color: brown;
   margin-right: 8px;
+  margin-bottom: 8px;
   transition: border-radius .3s, color .3s;
 }
 
@@ -60,7 +62,7 @@ div.mydrawer {
   padding: 6px 8px;
   font-size: 0.75rem;
   background-color: brown;
-  margin: 8px;
+  margin: 6px;
   transition: border-radius .3s, color .3s;
 }
 
