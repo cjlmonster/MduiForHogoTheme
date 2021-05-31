@@ -150,8 +150,8 @@ pre code {
 
 @media (prefers-color-scheme: dark) { 
   .bq blockquote {
-    color: #f0f0f0;
-    border-left-color:#fff;
+    color: #f0f0f0 !important;
+    border-left-color:#fff !important;
   }
 } 
 
