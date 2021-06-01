@@ -18,7 +18,7 @@ Menus:
       Pre: "home"
       URL: "/"
       Weight: 1
-    - Name: "博客专栏"
+    - Name: "分类"
       Pre: "local_library"
       URL: "/sections"
       Weight: 2
@@ -26,7 +26,7 @@ Menus:
       Pre: "local_offer"
       URL: "/tags"
       Weight: 3
-    - Name: "关于我"
+    - Name: "关于"
       Pre: "brightness_auto"
       URL: "/about"
       Weight: 4
@@ -45,4 +45,4 @@ params:
   niconame: "Rei"
   email: "cjlmonster@163.com"
   signature: "白开水与方便面"
-  headUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fc-ssl.duitang.com%2Fuploads%2Fitem%2F201909%2F27%2F20190927153637_jtitf.thumb.700_0.jpeg&refer=http%3A%2F%2Fc-ssl.duitang.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1622186371&t=688a32974f766c36aac39793b994b0fb"
+  headUrl: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fpic%2Fd%2F65%2Fb71b1394172.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1625107381&t=0ea60414bcd40f5f3e421eae7e483883"

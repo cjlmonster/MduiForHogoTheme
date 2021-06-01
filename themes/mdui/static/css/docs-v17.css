@@ -218,6 +218,7 @@ div.tab-box {
 }
 
 .avater {
+  display: block;
   margin: 1.5rem auto 1.25rem;
   width: 6rem;
   height: 6rem;

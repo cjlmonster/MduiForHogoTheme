@@ -1,7 +1,7 @@
 {{ define "main" -}}
 <!-- <h3 class="mdui-text-color-theme-500">{{ .Title }}</h3> -->
-<div class="mdui-divider mdui-m-t-2"></div>
-<ul class="mdui-list" mdui-collapse="{accordion: true}">
+<!-- <div class="mdui-divider mdui-m-t-2"></div> -->
+<ul class="mdui-list">
   {{ range $Page := .Site.Sections }}
   <li onclick="location.href = '/{{ $Page.Section }}'" class="mdui-list-item mdui-ripple">
     <div class="mdui-list-item-avatar"><img src="/img/{{ $Page.Params.Logo }}"/></div>
